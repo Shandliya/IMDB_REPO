@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import genericUtilities.BaseClass;
@@ -16,6 +17,8 @@ public class Imdb extends BaseClass {
 
 	public void pushpaMovieTest() throws IOException, InterruptedException {
 
+		String expectedCountryName="India";
+		String expectedReleaseDate="December 17, 2021 (United States)";
 		
 		String movie = excelUtility.getDataFromExcel(1, 1, "Sheet1");
 		String url = fileUtility.getDataFromProperty("url");
@@ -35,9 +38,11 @@ public class Imdb extends BaseClass {
 		String release = home.getReleaseDate();
 		System.out.println(country);
 		System.out.println(release);
+		Assert.assertEquals(country, expectedCountryName);
+		Assert.assertEquals(release, expectedReleaseDate);
 		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.invisibilityOfElementLocated((By.xpath("//img[@src='https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/cca46258-4f6b-4f56-a7c4-19dfa413079b.jpg']"))));
 		webdriverUtility.takeScreenShotPage(url, javaUtility);
-		driver.quit();
+																										driver.quit();
 	}
 }

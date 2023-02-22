@@ -1,6 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import genericUtilities.BaseClass;
@@ -10,7 +11,9 @@ public class WikiTest extends BaseClass {
 	
 	@Test
 	public void wikiTest() {
-
+		
+		String ExpectedReleaseDate="17 December 2021";
+		String ExpectedIdiaCountry="India";
 		String movieName = excelUtility.getDataFromExcel(1, 1, "Sheet1");
 		String browser = fileUtility.getDataFromProperty("browser");
 		String wiki = fileUtility.getDataFromProperty("wikiUrl");
@@ -24,8 +27,12 @@ public class WikiTest extends BaseClass {
 		WebElement poster = driver.findElement(By.xpath("//div[.='Theatrical release poster']"));
 		jsUtility.initiallizeJSExecutor(driver);
 		jsUtility.scrollTillElement(poster);
-		System.out.println("Realese date of the movie: "+w.getReleaseDate());
-		System.out.println("Country name: "+w.getCountryName());
+		String actualReleaseDate = w.getReleaseDate();
+		String actualCountryName=w.getCountryName();
+		System.out.println("Realese date of the movie: "+actualReleaseDate);
+		System.out.println("Country name: "+actualCountryName);		
+		Assert.assertEquals(ExpectedReleaseDate,actualReleaseDate );
+		Assert.assertEquals(ExpectedIdiaCountry,actualCountryName );
 		webdriverUtility.takeScreenShotPage(webdriverUtility, javaUtility);
 		driver.quit();
 	
