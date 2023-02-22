@@ -19,7 +19,6 @@ public class Imdb extends BaseClass {
 
 		String expectedCountryName="India";
 		String expectedReleaseDate="December 17, 2021 (United States)";
-		
 		String movie = excelUtility.getDataFromExcel(1, 1, "Sheet1");
 		String url = fileUtility.getDataFromProperty("url");
 		String browser = fileUtility.getDataFromProperty("browser");
