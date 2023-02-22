@@ -28,7 +28,15 @@ public class WikiTest extends BaseClass {
 		WebElement poster = driver.findElement(By.xpath("//div[.='Theatrical release poster']"));
 		jsUtility.initiallizeJSExecutor(driver);
 		jsUtility.scrollTillElement(poster);
-	
+		String actualReleaseDate = w.getReleaseDate();
+		String actualCountryName=w.getCountryName();
+		System.out.println("Realese date of the movie: "+actualReleaseDate);
+		System.out.println("Country name: "+actualCountryName);
+		
+		Assert.assertEquals(ExpectedReleaseDate,actualReleaseDate );
+		Assert.assertEquals(ExpectedIdiaCountry,actualReleaseDate );
+		webdriverUtility.takeScreenShotPage(webdriverUtility, javaUtility);
+		driver.quit();
 	
 	}
 }
