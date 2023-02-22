@@ -2,16 +2,16 @@
 <testng-results total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-02-21T17:56:12Z" name="Default suite" finished-at="2023-02-21T17:56:19Z" duration-ms="7104">
+  <suite started-at="2023-02-22T10:35:56Z" name="Default suite" finished-at="2023-02-22T10:36:34Z" duration-ms="37486">
     <groups>
     </groups>
-    <test started-at="2023-02-21T17:56:12Z" name="Default test" finished-at="2023-02-21T17:56:19Z" duration-ms="7104">
+    <test started-at="2023-02-22T10:35:56Z" name="Default test" finished-at="2023-02-22T10:36:34Z" duration-ms="37486">
       <class name="WikiTest">
-        <test-method is-config="true" signature="setUpSuite()[pri:0, instance:WikiTest@4da602fc]" started-at="2023-02-21T23:26:11Z" name="setUpSuite" finished-at="2023-02-21T23:26:12Z" duration-ms="906" status="PASS">
+        <test-method is-config="true" signature="setUpSuite()[pri:0, instance:WikiTest@15cafec7]" started-at="2023-02-22T16:05:55Z" name="setUpSuite" finished-at="2023-02-22T16:05:56Z" duration-ms="835" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpSuite -->
-        <test-method signature="wikiTest()[pri:0, instance:WikiTest@4da602fc]" started-at="2023-02-21T23:26:12Z" name="wikiTest" finished-at="2023-02-21T23:26:19Z" duration-ms="7031" status="PASS">
+        <test-method signature="wikiTest()[pri:0, instance:WikiTest@15cafec7]" started-at="2023-02-22T16:05:56Z" name="wikiTest" finished-at="2023-02-22T16:06:33Z" duration-ms="37310" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- wikiTest -->
